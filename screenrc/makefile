@@ -1,0 +1,2 @@
+all:
+	sudo cp .screenrc ~/
