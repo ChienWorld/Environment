@@ -37,8 +37,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
-" Python and other languages code checker
-Bundle 'scrooloose/syntastic'
+" Supertab
+Bundle 'ervandew/supertab'
+
 
 " ============================================================================
 " Install plugins the first time vim runs
@@ -97,22 +98,6 @@ map <F3> :NERDTreeToggle<CR>
 nmap ,t :NERDTreeFind<CR>
 " don;t show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
-
-
-" Syntastic ------------------------------
-
-" show list of errors and warnings on the current file
-nmap <leader>e :Errors<CR>
-" check also when just opened the file
-let g:syntastic_check_on_open = 1
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 0
-" custom icons (enable them if you use a patched font, and enable the previous 
-" setting)
-"let g:syntastic_error_symbol = '✗'
-"let g:syntastic_warning_symbol = '⚠'
-"let g:syntastic_style_error_symbol = '✗'
 
 " 啟用行游標提示。
 set cursorline
