@@ -34,13 +34,19 @@ Bundle 'gmarik/vundle'
 " Better file browser
 Bundle 'scrooloose/nerdtree'
 " Airline
-Bundle 'bling/vim-airline'
+" Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
 " Supertab
 Bundle 'ervandew/supertab'
-
-
+" Scala theme
+Bundle 'derekwyatt/vim-scala'
+" Tagbar
+Bundle 'majutsushi/tagbar'
+" java highlight theme
+Bundle 'vim-scripts/cSyntaxAfter'
 " ============================================================================
 " Install plugins the first time vim runs
 
@@ -90,7 +96,7 @@ endif
 set scrolloff=3
 
 
-" NERDTree ----------------------------- 
+" NERDTree -----------------------------
 
 " toggle nerdtree display
 map <F3> :NERDTreeToggle<CR>
@@ -104,3 +110,22 @@ set cursorline
 
 " 高亮當前行 (水平)。
 set cursorline
+
+" 讓tmux能夠對vim視窗進行操作
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:airline#extensions#tagbar#enabled = 1
+
+" Auto load plugin
+autocmd VimEnter * TagbarToggle
+autocmd VimEnter * NERDTreeFind
